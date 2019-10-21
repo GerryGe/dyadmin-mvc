@@ -43,7 +43,7 @@ namespace Dychar.Dyadmin.MultiTenancy
             _abpZeroDbMigrator = abpZeroDbMigrator;
         }
 
-        public override async Task<TenantDto> Create(CreateTenantDto input)
+        public override async Task<TenantDto> CreateAsync(CreateTenantDto input)
         {
             CheckCreatePermission();
 
@@ -106,7 +106,7 @@ namespace Dychar.Dyadmin.MultiTenancy
             entity.IsActive = updateInput.IsActive;
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public override async Task DeleteAsync(EntityDto<int> input)
         {
             CheckDeletePermission();
 
