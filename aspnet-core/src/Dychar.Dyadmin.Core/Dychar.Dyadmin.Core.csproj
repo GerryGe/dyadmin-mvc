@@ -12,7 +12,9 @@
     <RootNamespace>Dychar.Dyadmin</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Localization\SourceFiles\*.xml" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <EmbeddedResource Include="Localization\SourceFiles\Dyadmin-es.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\Dyadmin-zh-Hans.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\Dyadmin.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp.AutoMapper" Version="4.9.0" />

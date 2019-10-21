@@ -1,5 +1,5 @@
-﻿(function() {
-    $(function() {
+﻿(function () {
+    $(function () {
 
         var _userService = abp.services.app.user;
         var _$modal = $('#UserCreateModal');
@@ -32,7 +32,8 @@
             abp.ajax({
                 url: abp.appPath + 'Users/EditUserModal?userId=' + userId,
                 type: 'POST',
-                contentType: 'application/html',
+                //contentType: 'application/html',
+                dataType: 'html',
                 success: function (content) {
                     $('#UserEditModal div.modal-content').html(content);
                 },

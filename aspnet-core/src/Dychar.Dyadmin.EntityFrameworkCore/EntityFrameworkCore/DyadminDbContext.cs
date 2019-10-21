@@ -9,10 +9,16 @@ namespace Dychar.Dyadmin.EntityFrameworkCore
     public class DyadminDbContext : AbpZeroDbContext<Tenant, Role, User, DyadminDbContext>
     {
         /* Define a DbSet for each entity of the application */
-        
+
         public DyadminDbContext(DbContextOptions<DyadminDbContext> options)
             : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ChangeAbpTablePrefix<Tenant, Role, User>("Dy");
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
