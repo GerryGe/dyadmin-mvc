@@ -28,10 +28,9 @@
   "_resolution": {
     "type": "version",
     "tag": "v4.7.0",
-    "commit": "0f618911b105195c931ec5d5bef425a2a2806cab"
+    "commit": "a3fe90fa5f6fac55d197f9cbd18e3f57dafb716c"
   },
   "_source": "https://github.com/FortAwesome/Font-Awesome.git",
-  "_target": "^4.7.0",
-  "_originalSource": "font-awesome",
-  "_direct": true
+  "_target": "^4.7",
+  "_originalSource": "font-awesome"
 }

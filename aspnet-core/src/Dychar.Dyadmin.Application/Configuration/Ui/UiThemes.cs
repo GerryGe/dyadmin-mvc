@@ -10,26 +10,18 @@ namespace Dychar.Dyadmin.Configuration.Ui
         {
             All = new List<UiThemeInfo>
             {
-                new UiThemeInfo("Red", "red"),
-                new UiThemeInfo("Pink", "pink"),
-                new UiThemeInfo("Purple", "purple"),
-                new UiThemeInfo("Deep Purple", "deep-purple"),
-                new UiThemeInfo("Indigo", "indigo"),
-                new UiThemeInfo("Blue", "blue"),
-                new UiThemeInfo("Light Blue", "light-blue"),
-                new UiThemeInfo("Cyan", "cyan"),
-                new UiThemeInfo("Teal", "teal"),
-                new UiThemeInfo("Green", "green"),
-                new UiThemeInfo("Light Green", "light-green"),
-                new UiThemeInfo("Lime", "lime"),
-                new UiThemeInfo("Yellow", "yellow"),
-                new UiThemeInfo("Amber", "amber"),
-                new UiThemeInfo("Orange", "orange"),
-                new UiThemeInfo("Deep Orange", "deep-orange"),
-                new UiThemeInfo("Brown", "brown"),
-                new UiThemeInfo("Grey", "grey"),
-                new UiThemeInfo("Blue Grey", "blue-grey"),
-                new UiThemeInfo("Black", "black")
+                new UiThemeInfo("Black", "skin-black"),
+                new UiThemeInfo("Black Light", "skin-black-light"),
+                new UiThemeInfo("Blue", "skin-blue"),
+                new UiThemeInfo("Blue Light", "skin-blue-light"),
+                new UiThemeInfo("Green", "skin-green"),
+                new UiThemeInfo("Green Light", "skin-green-light"),
+                new UiThemeInfo("Purple", "skin-purple"),
+                new UiThemeInfo("Purple Light", "skin-purple-light"),
+                new UiThemeInfo("Red", "skin-red"),
+                new UiThemeInfo("Red Light", "skin-red-light"),
+                new UiThemeInfo("Yellow", "skin-yellow"),
+                new UiThemeInfo("Yellow Light", "skin-yellow-light"),
             };
         }
     }
