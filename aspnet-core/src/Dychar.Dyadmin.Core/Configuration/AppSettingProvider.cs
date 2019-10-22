@@ -9,7 +9,8 @@ namespace Dychar.Dyadmin.Configuration
         {
             return new[]
             {
-                new SettingDefinition(AppSettingNames.UiTheme, "red", scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, isVisibleToClients: true)
+                //Default skin
+                new SettingDefinition(AppSettingNames.UiTheme, "skin-blue", scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, isVisibleToClients: true)
             };
         }
     }
