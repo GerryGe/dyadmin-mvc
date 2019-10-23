@@ -22,7 +22,7 @@ namespace Dychar.Dyadmin.Web.Views.Shared.Components.SideBarNav
         {
             var model = new SideBarNavViewModel
             {
-                MainMenu = await _userNavigationManager.GetMenuAsync("MainMenu", _abpSession.ToUserIdentifier()),
+                MainMenu = await _userNavigationManager.GetMenuAsync("Dyadmin", _abpSession.ToUserIdentifier()),
                 ActiveMenuItemName = activeMenu
             };
 

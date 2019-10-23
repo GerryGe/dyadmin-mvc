@@ -10,7 +10,7 @@ using Dychar.Dyadmin.Users.Dto;
 
 namespace Dychar.Dyadmin.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages_Users)]
+    [AbpMvcAuthorize(PermissionNames.Pages_Administration_Users)]
     public class UsersController : DyadminControllerBase
     {
         private readonly IUserAppService _userAppService;

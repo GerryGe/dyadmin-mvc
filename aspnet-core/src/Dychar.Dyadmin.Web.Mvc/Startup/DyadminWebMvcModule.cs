@@ -21,7 +21,7 @@ namespace Dychar.Dyadmin.Web.Startup
         public override void PreInitialize()
         {
             Configuration.Navigation.Providers.Add<DyadminNavigationProvider>();
-            Configuration.MultiTenancy.IsEnabled = false;
+            //Configuration.MultiTenancy.IsEnabled = false;
         }
 
         public override void Initialize()

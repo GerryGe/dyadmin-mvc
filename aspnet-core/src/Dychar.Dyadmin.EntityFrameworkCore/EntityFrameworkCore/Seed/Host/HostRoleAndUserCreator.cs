@@ -46,7 +46,7 @@ namespace Dychar.Dyadmin.EntityFrameworkCore.Seed.Host
                 .ToList();
 
             var permissions = PermissionFinder
-                .GetAllPermissions(new DyadminAuthorizationProvider())
+                .GetAllPermissions(new DyadminAuthorizationProvider(DyadminConsts.MultiTenancyEnabled))
                 .Where(p => p.MultiTenancySides.HasFlag(MultiTenancySides.Host) &&
                             !grantedPermissions.Contains(p.Name))
                 .ToList();

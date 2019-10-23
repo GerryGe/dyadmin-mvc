@@ -10,7 +10,7 @@ using Dychar.Dyadmin.Web.Models.Roles;
 
 namespace Dychar.Dyadmin.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages_Roles)]
+    [AbpMvcAuthorize(PermissionNames.Pages_Administration_Roles)]
     public class RolesController : DyadminControllerBase
     {
         private readonly IRoleAppService _roleAppService;
