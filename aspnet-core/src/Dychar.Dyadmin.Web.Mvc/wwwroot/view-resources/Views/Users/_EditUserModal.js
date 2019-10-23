@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    var _userService = abp.services.app.user;
+    var _userService = abp.services.dc.user;
     var _$modal = $('#UserEditModal');
     var _$form = $('form[name=UserEditForm]');
 

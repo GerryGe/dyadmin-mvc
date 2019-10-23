@@ -1,7 +1,7 @@
 ﻿(function () {
 	$(function () {
 
-		var _roleService = abp.services.app.role;
+		var _roleService = abp.services.dc.role;
 		var _$modal = $('#RoleCreateModal');
 		var _$form = _$modal.find('form');
 

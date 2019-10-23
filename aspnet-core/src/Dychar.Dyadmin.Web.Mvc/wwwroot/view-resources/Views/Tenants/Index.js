@@ -1,7 +1,7 @@
 ﻿(function () {
     $(function () {
 
-        var _tenantService = abp.services.app.tenant;
+        var _tenantService = abp.services.dc.tenant;
         var _$modal = $('#TenantCreateModal');
         var _$form = _$modal.find('form');
 

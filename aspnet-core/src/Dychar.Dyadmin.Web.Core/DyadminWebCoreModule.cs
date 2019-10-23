@@ -19,7 +19,7 @@ namespace Dychar.Dyadmin
          typeof(DyadminApplicationModule),
          typeof(DyadminEntityFrameworkModule),
          typeof(AbpAspNetCoreModule)
-        ,typeof(AbpAspNetCoreSignalRModule)
+        , typeof(AbpAspNetCoreSignalRModule)
      )]
     public class DyadminWebCoreModule : AbpModule
     {
@@ -41,9 +41,10 @@ namespace Dychar.Dyadmin
             // Use database for language management
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
+            //Application Services as Controllers
             Configuration.Modules.AbpAspNetCore()
                  .CreateControllersForAppServices(
-                     typeof(DyadminApplicationModule).GetAssembly()
+                     typeof(DyadminApplicationModule).GetAssembly(), moduleName: "dc", useConventionalHttpVerbs: true
                  );
 
             ConfigureTokenAuth();

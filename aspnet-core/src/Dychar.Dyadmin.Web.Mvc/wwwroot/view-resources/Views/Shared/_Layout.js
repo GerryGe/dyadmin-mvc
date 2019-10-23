@@ -109,7 +109,7 @@ $(function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('lte.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('lte.controlsidebar');
         $layout = $('body').data('lte.layout');
-    })
+    });
 
     /**
      * List of all the available skins
@@ -129,7 +129,7 @@ $(function () {
         'skin-yellow-light',
         'skin-purple-light',
         'skin-green-light'
-    ]
+    ];
 
     /**
      * Get a prestored setting
@@ -156,7 +156,7 @@ $(function () {
         if (typeof (Storage) !== 'undefined') {
             //localStorage.setItem(name, val);
             //Change theme settings on the server
-            abp.services.app.configuration.changeUiTheme({
+            abp.services.dc.configuration.changeUiTheme({
                 theme: val
             });
         } else {
@@ -171,13 +171,13 @@ $(function () {
      * @returns void
      */
     function changeLayout(cls) {
-        $('body').toggleClass(cls)
-        $layout.fixSidebar()
-        if ($('body').hasClass('fixed') && cls == 'fixed') {
-            $pushMenu.expandOnHover()
-            $layout.activate()
+        $('body').toggleClass(cls);
+        $layout.fixSidebar();
+        if ($('body').hasClass('fixed') && cls === 'fixed') {
+            $pushMenu.expandOnHover();
+            $layout.activate();
         }
-        $controlSidebar.fix()
+        $controlSidebar.fix();
     }
 
     /**
@@ -187,12 +187,12 @@ $(function () {
      */
     function changeSkin(cls) {
         $.each(mySkins, function (i) {
-            $('body').removeClass(mySkins[i])
+            $('body').removeClass(mySkins[i]);
         })
 
-        $('body').addClass(cls)
-        store('skin', cls)
-        return false
+        $('body').addClass(cls);
+        store('skin', cls);
+        return false;
     }
 
     /**
@@ -208,24 +208,24 @@ $(function () {
         // Add the change skin listener
         $('[data-skin]').on('click', function (e) {
             if ($(this).hasClass('knob'))
-                return
-            e.preventDefault()
-            changeSkin($(this).data('skin'))
-        })
+                return;
+            e.preventDefault();
+            changeSkin($(this).data('skin'));
+        });
 
         // Add the layout manager
         $('[data-layout]').on('click', function () {
-            changeLayout($(this).data('layout'))
-        })
+            changeLayout($(this).data('layout'));
+        });
 
         $('[data-controlsidebar]').on('click', function () {
-            changeLayout($(this).data('controlsidebar'))
-            var slide = !$controlSidebar.options.slide
+            changeLayout($(this).data('controlsidebar'));
+            var slide = !$controlSidebar.options.slide;
 
-            $controlSidebar.options.slide = slide
+            $controlSidebar.options.slide = slide;
             if (!slide)
-                $('.control-sidebar').removeClass('control-sidebar-open')
-        })
+                $('.control-sidebar').removeClass('control-sidebar-open');
+        });
 
         $('[data-sidebarskin="toggle"]').on('click', function () {
             var $sidebar = $('.control-sidebar')
@@ -236,24 +236,24 @@ $(function () {
                 $sidebar.removeClass('control-sidebar-light')
                 $sidebar.addClass('control-sidebar-dark')
             }
-        })
+        });
 
         $('[data-enable="expandOnHover"]').on('click', function () {
-            $(this).attr('disabled', true)
-            $pushMenu.expandOnHover()
+            $(this).attr('disabled', true);
+            $pushMenu.expandOnHover();
             if (!$('body').hasClass('sidebar-collapse'))
-                $('[data-layout="sidebar-collapse"]').click()
-        })
+                $('[data-layout="sidebar-collapse"]').click();
+        });
 
         //  Reset options
         if ($('body').hasClass('fixed')) {
-            $('[data-layout="fixed"]').attr('checked', 'checked')
+            $('[data-layout="fixed"]').attr('checked', 'checked');
         }
         if ($('body').hasClass('layout-boxed')) {
-            $('[data-layout="layout-boxed"]').attr('checked', 'checked')
+            $('[data-layout="layout-boxed"]').attr('checked', 'checked');
         }
         if ($('body').hasClass('sidebar-collapse')) {
-            $('[data-layout="sidebar-collapse"]').attr('checked', 'checked')
+            $('[data-layout="sidebar-collapse"]').attr('checked', 'checked');
         }
 
     }
@@ -273,10 +273,10 @@ $(function () {
     // Add the tab button to the right sidebar tabs
     $('[href="#control-sidebar-home-tab"]')
         .parent()
-        .before($tabButton)
+        .before($tabButton);
 
     // Create the menu
-    var $demoSettings = $('<div />')
+    var $demoSettings = $('<div />');
 
     // Layout options
     $demoSettings.append(
@@ -331,8 +331,8 @@ $(function () {
         + '</label>'
         + '<p>Toggle between dark and light skins for the right sidebar</p>'
         + '</div>'
-    )
-    var $skinsList = $('<ul />', { 'class': 'list-unstyled clearfix' })
+    );
+    var $skinsList = $('<ul />', { 'class': 'list-unstyled clearfix' });
 
     // Dark sidebar skins
     var $skinBlue =
@@ -342,7 +342,7 @@ $(function () {
                 + '<div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>'
                 + '</a>'
                 + '<p class="text-center no-margin">Blue</p>')
-    $skinsList.append($skinBlue)
+    $skinsList.append($skinBlue);
     var $skinBlack =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
             .append('<a href="javascript:void(0)" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -350,7 +350,7 @@ $(function () {
                 + '<div><span style="display:block; width: 20%; float: left; height: 20px; background: #222"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>'
                 + '</a>'
                 + '<p class="text-center no-margin">Black</p>')
-    $skinsList.append($skinBlack)
+    $skinsList.append($skinBlack);
     var $skinPurple =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
             .append('<a href="javascript:void(0)" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -358,7 +358,7 @@ $(function () {
                 + '<div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>'
                 + '</a>'
                 + '<p class="text-center no-margin">Purple</p>')
-    $skinsList.append($skinPurple)
+    $skinsList.append($skinPurple);
     var $skinGreen =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
             .append('<a href="javascript:void(0)" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -366,7 +366,7 @@ $(function () {
                 + '<div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>'
                 + '</a>'
                 + '<p class="text-center no-margin">Green</p>')
-    $skinsList.append($skinGreen)
+    $skinsList.append($skinGreen);
     var $skinRed =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
             .append('<a href="javascript:void(0)" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -374,7 +374,7 @@ $(function () {
                 + '<div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>'
                 + '</a>'
                 + '<p class="text-center no-margin">Red</p>')
-    $skinsList.append($skinRed)
+    $skinsList.append($skinRed);
     var $skinYellow =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
             .append('<a href="javascript:void(0)" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -443,4 +443,4 @@ $(function () {
     setup();
 
     $('[data-toggle="tooltip"]').tooltip();
-})
+});

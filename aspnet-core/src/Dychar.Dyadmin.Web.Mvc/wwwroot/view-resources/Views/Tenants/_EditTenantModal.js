@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    var _tenantService = abp.services.app.tenant;
+    var _tenantService = abp.services.dc.tenant;
     var _$modal = $('#TenantEditModal');
     var _$form = $('form[name=TenantEditForm]');
 
